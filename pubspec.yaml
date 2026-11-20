@@ -93,3 +93,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+# jni 1.2.0 looks up object classes by JNI descriptor ("Landroid/content/Context;"),
+# which breaks path_provider_android on device with ClassNotFoundException.
+# Pin to the last version before that change until it's fixed upstream.
+dependency_overrides:
+  jni: 1.1.2
